@@ -1,10 +1,11 @@
 /* **************************************** RESET **************************************** */
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
 * {
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-decoration: none !important;
+    font-family: arial;
 }
 
 /* **************************************** GLOBAL **************************************** */
@@ -30,7 +31,8 @@ a {
 /* **************************************** BASE - FOOTER **************************************** */
 
 #copyright {
-    font-size: 0.75em;
+    font: size 2em;
+    color: black;
 }
 
 /* **************************************** HOME - HEADER **************************************** */
@@ -42,7 +44,7 @@ a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
 }
 
     #home-header h1,
@@ -55,5 +57,5 @@ a {
     }
 
     #home-header h2 {
-        top: 92%;
+        top: 95%;
     }
