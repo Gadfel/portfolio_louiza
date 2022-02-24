@@ -1,0 +1,39 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}projets{% endblock %}
+
+{% block body %}
+    
+    <h1 class="pb-5">Liste des projets</h1>
+
+    <table class="table text-center table-hover table-sm">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Titre</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for projets in projets %}
+                <tr>
+                    {#<td class="align-middle">{{ loop.revindex }}</td>#}
+                    <td class="align-middle">{{ projets.title }}</td>
+                    <td class="align-middle">{{ projets.name }}</td>
+                    <td class="align-middle"><img src="{{ asset('img/img/' ~ projets.img) }}" alt="photo principale {{ projets.title }}"></td>
+                    <td class="align-middle">
+                        <a href="{{ path('projets_update', {'id': projets.id}) }}" class="text-primary"><i class="fas fa-pen-square"></i></a>
+                        <a href="{{ path('projets_delete', {'id': projets.id}) }}" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-end my-5">
+        <a href="{{ path('projets_create') }}" class="btn btn-success">Ajouter un projets</a>
+    </div>
+
+{% endblock %}

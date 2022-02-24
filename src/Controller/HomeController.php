@@ -15,6 +15,7 @@ class HomeController extends AbstractController
         $projet =$projetsRepository->findAll();
         return $this->render('home/index.html.twig', [
             'projets'=>$projet,
+           
         ]);
     }
 }

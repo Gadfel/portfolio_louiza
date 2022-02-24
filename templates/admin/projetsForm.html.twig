@@ -1,0 +1,32 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}projets{% endblock %}
+
+{% block body %}
+
+   
+
+    {{ form_start(projetsForm) }}
+
+        <div class="row">
+            <div class="col-9">
+                {{ form_row(projetsForm.name, {'label': 'name'}) }}
+            </div>
+            <div class="col-3">
+                {{ form_row(projetsForm.title, {'label': 'titre'})}}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                {{ form_row(projetsForm.img, {'label': 'Photo principale'}) }}
+            </div>
+            
+        <div class="col-12 d-flex justify-content-end">
+            <a href="{{ path('admin_projets_index') }}" class="btn btn-danger m-3">Annuler</a>
+            <button class="btn btn-success m-3">Créer</button>
+        </div>
+        
+    {{ form_end(projetsForm) }}
+
+{% endblock %}

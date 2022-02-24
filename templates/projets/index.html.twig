@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Projets{% endblock %}
+
+{% block body %}
+<h1> Tout mes projets </h1>
+
+
+    <div class="row">
+        {% for projets in projets %}
+        <div class="col-6 p-3">
+            <div class="card">
+                <img src="{{ asset('img/img/'~ projets.img)}}" class="card-img-top" alt="machine a café ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{projets.title}}  {{ projets.name}} </h5>
+                        <p class="card-text">{{ projets.description}}</p>
+                        <a href="{{ path('projets_index', {'id': projets.id}) }}" class="btn btn-primary">retour</a>
+                    </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
